@@ -1,0 +1,80 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.message {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 120px;
+    white-space: nowrap;
+}
+
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.buttons a {
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons a:hover {
+    background-color: #45a049;
+}

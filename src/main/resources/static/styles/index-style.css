@@ -1,0 +1,35 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.buttons a {
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container a:hover {
+    background-color: #45a049;
+}
