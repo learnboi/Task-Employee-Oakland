@@ -22,9 +22,13 @@
 </head>
 <body>
 
-<h2>Hello, Admin</h2>
+<div class="message">
+    Hello, Admin
+</div>
+
 <table>
     <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Date of Birth</th>
         <th>Gender</th>
@@ -34,10 +38,11 @@
     </tr>
     <%
         List<Employee> list = (List<Employee>) request.getAttribute("employees");
-        if (list != null) {
+        if (list != null && !list.isEmpty()) {
             for (Employee e : list) {
     %>
     <tr>
+        <td><%= e.getId() %></td>
         <td><%= e.getName() %></td>
         <td><%= e.getDob() %></td>
         <td><%= e.getGender() %></td>

@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
-    Optional<Employee> findById(String employeeId);
+    Optional<Employee> findById(String login_id); // Use the field name 'login_id'
 }

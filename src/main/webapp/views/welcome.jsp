@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="styles/welcome-style.css">
 </head>
 <body>
-<h1>Welcome</h1>
 <div class="message">
     <%
         String name = (String) session.getAttribute("name");
@@ -39,6 +38,7 @@
 
 <table>
     <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Date of Birth</th>
         <th>Gender</th>
@@ -54,6 +54,7 @@
                 if(!e.getLogin_id().equals(loginId)){
     %>
     <tr>
+        <td><%= e.getId() %></td>
         <td><%= e.getName() %></td>
         <td><%= e.getDob() %></td>
         <td><%= e.getGender() %></td>

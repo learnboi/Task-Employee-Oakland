@@ -27,4 +27,9 @@ public class WebController {
     public String index(){
         return "index";
     }
+
+    @RequestMapping("forgetpassword")
+    public String forgetpassword(){
+        return "re-pass";
+    }
 }

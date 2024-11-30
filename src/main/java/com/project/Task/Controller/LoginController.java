@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
 @Controller
 public class LoginController {
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     @GetMapping("/admin-page")
     public String adminPage(HttpSession session, Model model) {
@@ -23,12 +26,11 @@ public class LoginController {
             return "redirect:/login";
         }
         List<Employee> employees = employeeRepository.findAll();
-            model.addAttribute("employees", employees);
-            return "admin-page";
+        employees.sort(Comparator.comparing(Employee::getId));
+        model.addAttribute("employees", employees);
+        return "admin-page";
     }
 
-    @Autowired
-    EmployeeRepository employeeRepository;
 
     @PostMapping("login-data")
     public String loginValidate(@RequestParam String login_id, @RequestParam String password, Model model, HttpSession session) {
@@ -42,6 +44,7 @@ public class LoginController {
                 Employee employee = employeeOpt.get();
                 if (employee.getPassword().equals(password)) {
                     List<Employee> employees = employeeRepository.findAll();
+                    employees.sort(Comparator.comparing(Employee::getId));
                     session.setAttribute("employees", employees);
                     session.setAttribute("name", employee.getName());
                     session.setAttribute("login_id", login_id);
@@ -61,4 +64,5 @@ public class LoginController {
         session.invalidate();
         return "redirect:/home";
     }
+
 }

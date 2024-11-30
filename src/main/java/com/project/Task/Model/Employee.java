@@ -14,15 +14,17 @@ import lombok.Setter;
 @Table(name = "employeedata")
 public class Employee {
 
+    @Id
+    @Column(name = "login_id", nullable = false, unique = true)
+    private String login_id;
+
+    private Long id;
+
     private String name;
     private String dob;
     private String gender;
     private String address;
     private String city;
     private String state;
-
-    @Column(unique = true)
-    @Id
-    private String login_id;
     private String password;
 }
